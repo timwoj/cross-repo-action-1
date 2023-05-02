@@ -38,6 +38,6 @@ jobs:
       - name: Call other service
         run: |
           curl -X -H "Accept: application/vnd.github+json" \
-          -H "Authorization: token ${{ secrets.ACCESS_TOKE }}" \
+          -H "Authorization: token ${{ secrets.ACCESS_TOKEN }}" \
           --data '{"event_type": "build"}' \
           https://api.github.com/repos/cross-repo-action-2/dispatches
