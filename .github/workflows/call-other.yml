@@ -34,3 +34,10 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: Call other service
+        run: |
+          curl -X -H "Accept: application/vnd.github+json" \
+          -H "Authorization: token ${{ secrets.ACCESS_TOKE }}" \
+          --data '{"event_type": "build"}' \
+          https://api.github.com/repos/cross-repo-action-2/dispatches
