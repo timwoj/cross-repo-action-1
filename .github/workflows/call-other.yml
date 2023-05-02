@@ -39,4 +39,4 @@ jobs:
         run: |
           curl -H "Accept: application/vnd.github+json" \
           -H "Authorization: token ${{ secrets.ACCESS_TOKEN }}" --request POST \
-          --data '{"event_type": "build"}' https://api.github.com/repos/cross-repo-action-2/dispatches
+          --data '{"event_type": "build"}' https://api.github.com/repos/timwoj/cross-repo-action-2/dispatches
