@@ -1,0 +1,15 @@
+name: event_data
+on:
+  pull_request:
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo data
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - name: check master
+        if: github.base_ref == 'main'
+        run:
+          echo "this is on master"
